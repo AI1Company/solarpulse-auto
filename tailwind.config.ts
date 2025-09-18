@@ -23,6 +23,22 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        "solar-orange": {
+          DEFAULT: "hsl(var(--solar-orange))",
+          foreground: "hsl(var(--solar-orange-foreground))",
+        },
+        "solar-amber": {
+          DEFAULT: "hsl(var(--solar-amber))",
+          foreground: "hsl(var(--solar-amber-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -57,6 +73,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        "gradient-solar": "var(--gradient-solar)",
+        "gradient-energy": "var(--gradient-energy)",
+        "gradient-panel": "var(--gradient-panel)",
+        "gradient-hero": "var(--gradient-hero)",
+      },
+      boxShadow: {
+        "solar": "var(--shadow-solar)",
+        "energy": "var(--shadow-energy)",
+        "elevated": "var(--shadow-elevated)",
       },
       borderRadius: {
         lg: "var(--radius)",

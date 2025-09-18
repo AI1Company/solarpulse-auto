@@ -2,39 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Solar Project Lifecycle Platform Design System
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Solar-themed color palette */
+    --background: 210 25% 98%;
+    --foreground: 215 25% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Primary: Deep solar blue */
+    --primary: 215 84% 12%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Solar orange accent */
+    --solar-orange: 35 100% 55%;
+    --solar-orange-foreground: 215 84% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Solar amber for highlights */
+    --solar-amber: 45 96% 65%;
+    --solar-amber-foreground: 215 84% 12%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 17% 94%;
+    --secondary-foreground: 215 25% 16%;
+
+    --muted: 210 17% 94%;
+    --muted-foreground: 215 13% 52%;
+
+    --accent: 210 17% 94%;
+    --accent-foreground: 215 25% 16%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 12% 87%;
+    --input: 215 12% 87%;
+    --ring: 215 84% 12%;
+
+    /* Success state for energy positive */
+    --success: 142 71% 45%;
+    --success-foreground: 210 40% 98%;
+
+    /* Warning for energy optimization */
+    --warning: 35 100% 55%;
+    --warning-foreground: 215 84% 12%;
+
+    /* Solar-specific gradients */
+    --gradient-solar: linear-gradient(135deg, hsl(215 84% 12%), hsl(215 84% 25%));
+    --gradient-energy: linear-gradient(135deg, hsl(35 100% 55%), hsl(45 96% 65%));
+    --gradient-panel: linear-gradient(180deg, hsl(215 15% 95%), hsl(215 12% 87%));
+    --gradient-hero: linear-gradient(135deg, hsl(215 84% 12%) 0%, hsl(215 70% 18%) 50%, hsl(35 100% 55%) 100%);
+
+    /* Shadows with solar theme */
+    --shadow-solar: 0 10px 30px -10px hsl(215 84% 12% / 0.2);
+    --shadow-energy: 0 0 40px hsl(35 100% 55% / 0.15);
+    --shadow-elevated: 0 4px 6px -1px hsl(215 84% 12% / 0.1), 0 2px 4px -2px hsl(215 84% 12% / 0.1);
 
     --radius: 0.5rem;
 
@@ -56,41 +85,56 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Dark mode solar theme */
+    --background: 215 25% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 215 25% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 215 25% 10%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary-foreground: 215 84% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --solar-orange: 35 100% 55%;
+    --solar-orange-foreground: 215 25% 8%;
+
+    --solar-amber: 45 96% 65%;
+    --solar-amber-foreground: 215 25% 8%;
+
+    --secondary: 215 25% 15%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 215 25% 15%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62.8% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 215 25% 18%;
+    --input: 215 25% 18%;
+    --ring: 210 40% 98%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 35 100% 55%;
+    --warning-foreground: 215 25% 8%;
+
+    /* Dark mode gradients */
+    --gradient-solar: linear-gradient(135deg, hsl(215 84% 12%), hsl(215 70% 25%));
+    --gradient-energy: linear-gradient(135deg, hsl(35 100% 55%), hsl(45 96% 65%));
+    --gradient-panel: linear-gradient(180deg, hsl(215 25% 12%), hsl(215 25% 10%));
+    --gradient-hero: linear-gradient(135deg, hsl(215 25% 8%) 0%, hsl(215 40% 12%) 50%, hsl(35 100% 55%) 100%);
+
+    --shadow-solar: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    --shadow-energy: 0 0 40px hsl(35 100% 55% / 0.25);
+    --shadow-elevated: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -2px hsl(0 0% 0% / 0.3);
   }
 }
 
